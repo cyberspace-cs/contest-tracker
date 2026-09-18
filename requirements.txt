@@ -1,0 +1,1 @@
+# 脚本仅用 Python 标准库（urllib/json），无第三方依赖

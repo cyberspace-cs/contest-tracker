@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>比赛雷达 · Contest Radar</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<style>
+  :root {
+    --bg: #0b1020;
+    --bg2: #111735;
+    --card: #171e3d;
+    --card2: #1d2547;
+    --border: #2a3460;
+    --text: #e8ecff;
+    --text2: #9aa3c7;
+    --accent: #6c7bff;
+    --accent2: #4dd6a7;
+    --pink: #ff6b9d;
+    --orange: #ffa95c;
+    --cyan: #5cd0ff;
+    --green: #4dd6a7;
+    --red: #ff6b6b;
+    --gray: #7a84a8;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    background-image:
+      radial-gradient(ellipse 80% 50% at 20% -10%, rgba(108,123,255,.15), transparent),
+      radial-gradient(ellipse 60% 40% at 90% 110%, rgba(77,214,167,.08), transparent);
+  }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 24px 20px 80px; }
+
+  /* Header */
+  header { text-align: center; padding: 36px 0 8px; }
+  .logo { font-size: 44px; margin-bottom: 6px; }
+  h1 {
+    font-size: 34px; font-weight: 800; letter-spacing: 1px;
+    background: linear-gradient(90deg, var(--accent), var(--cyan), var(--green));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .sub { color: var(--text2); margin-top: 8px; font-size: 14px; }
+  .gen-info { margin-top: 12px; font-size: 12px; color: var(--gray); }
+
+  /* Controls */
+  .controls {
+    display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: center;
+    margin: 28px auto 24px; padding: 16px 18px;
+    background: var(--card); border: 1px solid var(--border); border-radius: 16px;
+    max-width: 900px;
+  }
+  .seg {
+    display: inline-flex; background: var(--bg2); border-radius: 10px; padding: 3px; gap: 2px;
+  }
+  .seg button {
+    border: none; background: transparent; color: var(--text2);
+    padding: 7px 16px; border-radius: 8px; cursor: pointer; font-size: 13px; font-weight: 600;
+    transition: all .15s;
+  }
+  .seg button.active {
+    background: var(--accent); color: #fff; box-shadow: 0 2px 10px rgba(108,123,255,.35);
+  }
+  .search {
+    flex: 1; min-width: 180px;
+    background: var(--bg2); border: 1px solid var(--border); border-radius: 10px;
+    padding: 8px 14px; color: var(--text); font-size: 13px; outline: none;
+  }
+  .search::placeholder { color: var(--gray); }
+  .search:focus { border-color: var(--accent); }
+
+  /* Platform pills */
+  .pills { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 0 auto 26px; max-width: 900px; }
+  .pill {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 6px 14px; border-radius: 999px; cursor: pointer;
+    border: 1px solid var(--border); background: var(--card);
+    font-size: 13px; font-weight: 600; color: var(--text2); transition: all .15s;
+    user-select: none;
+  }
+  .pill:hover { border-color: var(--accent); color: var(--text); }
+  .pill.on { border-color: transparent; color: #fff; }
+  .pill .dot { width: 8px; height: 8px; border-radius: 50%; }
+  .pill .cnt { font-size: 11px; opacity: .75; }
+  .pill[data-p="codeforces"].on { background: #2a2a4a; }
+  .pill[data-p="kaggle"].on { background: #14532d; }
+  .pill[data-p="icpc"].on { background: #7c2d12; }
+  .pill[data-p="noi"].on { background: #3b0764; }
+  .pill[data-p="hackathon"].on { background: #164e63; }
+
+  /* Timeline */
+  .timeline { position: relative; padding-left: 28px; }
+  .timeline::before {
+    content: ""; position: absolute; left: 7px; top: 0; bottom: 0; width: 2px;
+    background: linear-gradient(180deg, var(--accent), var(--cyan), var(--green));
+    opacity: .35; border-radius: 2px;
+  }
+  .titem { position: relative; margin-bottom: 16px; }
+  .titem::before {
+    content: ""; position: absolute; left: -26px; top: 20px;
+    width: 12px; height: 12px; border-radius: 50%;
+    background: var(--card2); border: 2px solid var(--accent);
+  }
+  .titem.running::before { background: var(--green); border-color: var(--green); box-shadow: 0 0 12px rgba(77,214,167,.6); }
+  .titem.finished::before { background: var(--gray); border-color: var(--gray); }
+  .titem.upcoming::before { background: var(--accent); box-shadow: 0 0 10px rgba(108,123,255,.5); }
+
+  .card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+    padding: 14px 18px; transition: all .2s; display: flex; flex-wrap: wrap; gap: 14px;
+    align-items: flex-start;
+  }
+  .card:hover { transform: translateY(-2px); border-color: rgba(108,123,255,.5); box-shadow: 0 8px 30px rgba(0,0,0,.3); }
+  .card-main { flex: 1; min-width: 260px; }
+  .card-top { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .badge {
+    font-size: 11px; font-weight: 700; padding: 3px 9px; border-radius: 6px; letter-spacing: .3px;
+  }
+  .b-codeforces { background: rgba(148,163,184,.18); color: #cbd5e1; }
+  .b-kaggle { background: rgba(77,214,167,.15); color: var(--green); }
+  .b-icpc { background: rgba(255,169,92,.15); color: var(--orange); }
+  .b-noi { background: rgba(255,107,157,.15); color: var(--pink); }
+  .b-hackathon { background: rgba(92,208,255,.15); color: var(--cyan); }
+  .status {
+    font-size: 11px; font-weight: 600; padding: 3px 9px; border-radius: 999px;
+  }
+  .st-upcoming { background: rgba(108,123,255,.15); color: var(--accent); }
+  .st-running { background: rgba(77,214,167,.15); color: var(--green); }
+  .st-finished { background: rgba(122,132,168,.15); color: var(--gray); }
+  .st-announcement { background: rgba(255,169,92,.12); color: var(--orange); }
+  .card h3 { font-size: 16px; font-weight: 700; margin: 8px 0 4px; line-height: 1.45; }
+  .card h3 a { color: var(--text); text-decoration: none; }
+  .card h3 a:hover { color: var(--cyan); }
+  .meta { font-size: 12.5px; color: var(--text2); display: flex; flex-wrap: wrap; gap: 6px 16px; }
+  .meta b { color: var(--text); font-weight: 600; }
+  .time-left { font-size: 12px; margin-top: 8px; font-weight: 600; }
+  .tl-upcoming { color: var(--cyan); }
+  .tl-running { color: var(--green); }
+  .tl-finished { color: var(--gray); }
+  .links { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
+  .links a {
+    font-size: 12px; text-decoration: none; color: var(--accent);
+    border: 1px solid rgba(108,123,255,.3); padding: 4px 12px; border-radius: 8px;
+    transition: all .15s;
+  }
+  .links a:hover { background: rgba(108,123,255,.12); border-color: var(--accent); }
+
+  /* Empty / loading */
+  .state { text-align: center; padding: 60px 0; color: var(--text2); font-size: 15px; }
+  .spinner {
+    width: 34px; height: 34px; margin: 0 auto 14px; border-radius: 50%;
+    border: 3px solid var(--border); border-top-color: var(--accent);
+    animation: spin 1s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* Legend */
+  .legend { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 20px; font-size: 12px; color: var(--text2); }
+  .legend span { display: inline-flex; align-items: center; gap: 5px; }
+  .legend i { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+
+  footer { text-align: center; margin-top: 48px; font-size: 12px; color: var(--gray); }
+  footer a { color: var(--accent); text-decoration: none; }
+
+  @media (max-width: 640px) {
+    h1 { font-size: 26px; }
+    .controls { padding: 12px; }
+    .card { padding: 12px 14px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="logo">📡</div>
+    <h1>比赛雷达 Contest Radar</h1>
+    <p class="sub">Kaggle · Codeforces · ICPC/ACM · NOI/CSP · 黑客松 —— 一站式实时比赛信息跟踪</p>
+    <div class="gen-info" id="genInfo">加载中…</div>
+  </header>
+
+  <div class="controls">
+    <div class="seg" id="rangeSeg">
+      <button data-r="1">近 1 个月</button>
+      <button data-r="3" class="active">近 3 个月</button>
+      <button data-r="6">近 6 个月</button>
+    </div>
+    <input class="search" id="search" type="text" placeholder="🔍 搜索比赛名称 / 关键词…">
+  </div>
+
+  <div class="pills" id="pills"></div>
+  <div class="legend">
+    <span><i style="background:var(--accent)"></i> 即将开始</span>
+    <span><i style="background:var(--green)"></i> 进行中</span>
+    <span><i style="background:var(--orange)"></i> 公告/报名</span>
+    <span><i style="background:var(--gray)"></i> 已结束</span>
+  </div>
+
+  <div id="timeline" class="timeline">
+    <div class="state"><div class="spinner"></div>正在加载比赛数据…</div>
+  </div>
+
+  <footer>
+    Powered by <a href="https://github.com/cyberspace-cs/contest-tracker">contest-tracker</a> ·
+    数据每 6 小时自动更新 · buleboy
+  </footer>
+</div>
+
+<script>
+const PLATFORM_META = {
+  codeforces: { zh: "Codeforces", color: "#cbd5e1", cls: "b-codeforces" },
+  kaggle:     { zh: "Kaggle",     color: "#4dd6a7", cls: "b-kaggle" },
+  icpc:       { zh: "ICPC/ACM",   color: "#ffa95c", cls: "b-icpc" },
+  noi:        { zh: "NOI/CSP",    color: "#ff6b9d", cls: "b-noi" },
+  hackathon:  { zh: "黑客松",      color: "#5cd0ff", cls: "b-hackathon" },
+};
+const STATUS_ZH = {
+  upcoming: "即将开始", running: "进行中", finished: "已结束", announcement: "公告/报名", unknown: "未知",
+};
+let DATA = null;
+let rangeMonths = 3;
+const activePlats = new Set(Object.keys(PLATFORM_META));
+
+function fmt(dt) {
+  if (!dt) return "时间待定";
+  const d = new Date(dt);
+  if (isNaN(d)) return String(dt);
+  const p = (n) => String(n).padStart(2, "0");
+  return `${d.getFullYear()}-${p(d.getMonth()+1)}-${p(d.getDate())} ${p(d.getHours())}:${p(d.getMinutes())}`;
+}
+function fmtDate(dt) {
+  if (!dt) return "时间待定";
+  const d = new Date(dt);
+  if (isNaN(d)) return String(dt);
+  const p = (n) => String(n).padStart(2, "0");
+  return `${d.getFullYear()}-${p(d.getMonth()+1)}-${p(d.getDate())}`;
+}
+function daysLeft(dt) {
+  if (!dt) return null;
+  const d = new Date(dt);
+  if (isNaN(d)) return null;
+  return Math.ceil((d - Date.now()) / 86400000);
+}
+function timeLeftText(c) {
+  if (c.status === "announcement") return "";
+  if (c.status === "finished") {
+    const d = daysLeft(c.end_time || c.start_time);
+    return d !== null && d <= 0 ? `已结束 ${-d} 天` : "";
+  }
+  const t = c.start_time;
+  const d = daysLeft(t);
+  if (d === null) return "";
+  if (d > 0) return `⏳ ${d} 天后开始`;
+  if (d === 0) return "🔥 今天开始";
+  if (c.status === "running") return "🚀 进行中";
+  return "";
+}
+
+function loadData() {
+  fetch("contests.json", { cache: "no-store" })
+    .then(r => { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+    .then(d => {
+      DATA = d;
+      document.getElementById("genInfo").textContent =
+        `共 ${d.total} 场比赛 · 更新于 ${fmt(d.generated_at)}`;
+      renderPills();
+      render();
+    })
+    .catch(e => {
+      document.getElementById("timeline").innerHTML =
+        `<div class="state">加载失败：${e.message}<br>请确认 contests.json 存在（GitHub Actions 每 6 小时生成）</div>`;
+    });
+}
+
+function renderPills() {
+  const wrap = document.getElementById("pills");
+  wrap.innerHTML = "";
+  for (const [k, m] of Object.entries(PLATFORM_META)) {
+    const cnt = DATA.contests.filter(c => c.platform === k).length;
+    const btn = document.createElement("div");
+    btn.className = "pill on";
+    btn.dataset.p = k;
+    btn.innerHTML = `<span class="dot" style="background:${m.color}"></span>${m.zh}<span class="cnt">${cnt}</span>`;
+    btn.onclick = () => {
+      if (activePlats.has(k)) { activePlats.delete(k); btn.classList.remove("on"); }
+      else { activePlats.add(k); btn.classList.add("on"); }
+      render();
+    };
+    wrap.appendChild(btn);
+  }
+}
+
+function filterContests() {
+  const q = document.getElementById("search").value.trim().toLowerCase();
+  const cutoff = new Date();
+  cutoff.setMonth(cutoff.getMonth() - rangeMonths);
+  const cutoffTs = cutoff.getTime();
+  const nowTs = Date.now();
+
+  return DATA.contests.filter(c => {
+    if (!activePlats.has(c.platform)) return false;
+    if (q && !c.name.toLowerCase().includes(q)) return false;
+    const t = c.start_time ? new Date(c.start_time).getTime() : null;
+    if (t && !isNaN(t)) return t >= cutoffTs;
+    // 无时间的公告类：仅在"近 6 个月"且搜索命中时显示，避免刷屏
+    return rangeMonths >= 6 && !q;
+  }).sort((a, b) => {
+    const ta = a.start_time ? new Date(a.start_time).getTime() : (nowTs + 9e9);
+    const tb = b.start_time ? new Date(b.start_time).getTime() : (nowTs + 9e9);
+    return ta - tb;
+  });
+}
+
+function render() {
+  const list = filterContests();
+  const tl = document.getElementById("timeline");
+  if (!list.length) {
+    tl.innerHTML = `<div class="state">📭 当前筛选下没有比赛，换个时间范围或平台试试</div>`;
+    return;
+  }
+  tl.innerHTML = "";
+  for (const c of list) {
+    const m = PLATFORM_META[c.platform] || { zh: c.platform, cls: "" };
+    const item = document.createElement("div");
+    item.className = "titem " + (c.status === "running" ? "running" : c.status === "finished" ? "finished" : "upcoming");
+
+    let timeMeta = "";
+    if (c.status === "announcement") {
+      timeMeta = `<span>📅 <b>${fmtDate(c.start_time)}</b></span>`;
+    } else {
+      timeMeta = `<span>⏱ <b>${fmt(c.start_time)}</b> → ${fmt(c.end_time)}</span>`;
+      if (c.duration_sec) {
+        const h = Math.round(c.duration_sec / 3600);
+        timeMeta += `<span>时长 <b>${h}</b> 小时</span>`;
+      }
+    }
+    const tlt = timeLeftText(c);
+    const timeLeft = tlt ? `<div class="time-left tl-${c.status}">${tlt}</div>` : "";
+
+    let links = "";
+    if (c.url) links += `<a href="${c.url}" target="_blank" rel="noopener">🔗 比赛主页</a>`;
+    if (c.register_url && c.register_url !== c.url) links += `<a href="${c.register_url}" target="_blank" rel="noopener">📝 报名</a>`;
+
+    item.innerHTML = `
+      <div class="card">
+        <div class="card-main">
+          <div class="card-top">
+            <span class="badge ${m.cls}">${m.zh}</span>
+            <span class="status st-${c.status}">${STATUS_ZH[c.status] || c.status}</span>
+          </div>
+          <h3><a href="${c.url || '#'}" target="_blank" rel="noopener">${c.name}</a></h3>
+          <div class="meta">${timeMeta}</div>
+          ${timeLeft}
+          ${links ? `<div class="links">${links}</div>` : ""}
+        </div>
+      </div>`;
+    tl.appendChild(item);
+  }
+}
+
+document.getElementById("rangeSeg").addEventListener("click", e => {
+  const b = e.target.closest("button");
+  if (!b) return;
+  document.querySelectorAll("#rangeSeg button").forEach(x => x.classList.remove("active"));
+  b.classList.add("active");
+  rangeMonths = parseInt(b.dataset.r, 10);
+  render();
+});
+document.getElementById("search").addEventListener("input", render);
+
+loadData();
+</script>
+</body>
+</html>

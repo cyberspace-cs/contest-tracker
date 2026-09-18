@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Devpost 全球黑客松",
+    "url": "https://devpost.com/hackathons",
+    "start_time": null,
+    "end_time": null,
+    "status": "announcement"
+  },
+  {
+    "name": "黑客松中国 (HackathonChina)",
+    "url": "https://www.hackathonchina.com/",
+    "start_time": null,
+    "end_time": null,
+    "status": "announcement"
+  },
+  {
+    "name": "Lettuce 黑客松聚合",
+    "url": "https://lettuce.cool/",
+    "start_time": null,
+    "end_time": null,
+    "status": "announcement"
+  },
+  {
+    "name": "TechCrunch Hackathon 频道",
+    "url": "https://techcrunch.com/tag/hackathon/",
+    "start_time": null,
+    "end_time": null,
+    "status": "announcement"
+  }
+]
