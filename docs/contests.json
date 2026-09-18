@@ -1,7 +1,346 @@
 {
-  "generated_at": "2026-09-18T13:37:12+0800",
-  "total": 73,
+  "generated_at": "2026-09-18T16:20:21+0800",
+  "total": 108,
   "contests": [
+    {
+      "platform": "codeforces",
+      "platform_zh": "Codeforces",
+      "name": "Nebius Round 2 (Codeforces Round 1088, Div. 1 + Div. 2)",
+      "url": "https://codeforces.com/contest/2211",
+      "start_time": "2026-03-28T22:45:00+0800",
+      "end_time": "2026-03-29T01:15:00+0800",
+      "status": "finished",
+      "duration_sec": 9000,
+      "register_url": "https://codeforces.com/contestRegistration/2211",
+      "source": "codeforces-api"
+    },
+    {
+      "platform": "codeforces",
+      "platform_zh": "Codeforces",
+      "name": "Codeforces Round 1089 (Div. 2)",
+      "url": "https://codeforces.com/contest/2210",
+      "start_time": "2026-03-29T22:35:00+0800",
+      "end_time": "2026-03-30T00:50:00+0800",
+      "status": "finished",
+      "duration_sec": 8100,
+      "register_url": "https://codeforces.com/contestRegistration/2210",
+      "source": "codeforces-api"
+    },
+    {
+      "platform": "codeforces",
+      "platform_zh": "Codeforces",
+      "name": "April Fools Day Contest 2026",
+      "url": "https://codeforces.com/contest/2214",
+      "start_time": "2026-04-01T22:35:00+0800",
+      "end_time": "2026-04-02T00:35:00+0800",
+      "status": "finished",
+      "duration_sec": 7200,
+      "register_url": "https://codeforces.com/contestRegistration/2214",
+      "source": "codeforces-api"
+    },
+    {
+      "platform": "codeforces",
+      "platform_zh": "Codeforces",
+      "name": "Codeforces Round 1090 (Div. 4)",
+      "url": "https://codeforces.com/contest/2218",
+      "start_time": "2026-04-04T22:35:00+0800",
+      "end_time": "2026-04-05T00:50:00+0800",
+      "status": "finished",
+      "duration_sec": 8100,
+      "register_url": "https://codeforces.com/contestRegistration/2218",
+      "source": "codeforces-api"
+    },
+    {
+      "platform": "codeforces",
+      "platform_zh": "Codeforces",
+      "name": "Codeforces Round 1091 (Div. 2) and CodeCraft 26",
+      "url": "https://codeforces.com/contest/2217",
+      "start_time": "2026-04-07T22:35:00+0800",
+      "end_time": "2026-04-08T00:50:00+0800",
+      "status": "finished",
+      "duration_sec": 8100,
+      "register_url": "https://codeforces.com/contestRegistration/2217",
+      "source": "codeforces-api"
+    },
+    {
+      "platform": "codeforces",
+      "platform_zh": "Codeforces",
+      "name": "Codeforces Round 1092 (Unrated, Div. 1, Based on THUPC 2026 — Finals)",
+      "url": "https://codeforces.com/contest/2215",
+      "start_time": "2026-04-12T13:35:00+0800",
+      "end_time": "2026-04-12T16:35:00+0800",
+      "status": "finished",
+      "duration_sec": 10800,
+      "register_url": "https://codeforces.com/contestRegistration/2215",
+      "source": "codeforces-api"
+    },
+    {
+      "platform": "codeforces",
+      "platform_zh": "Codeforces",
+      "name": "Codeforces Round 1092 (Unrated, Div. 2, Based on THUPC 2026 — Finals)",
+      "url": "https://codeforces.com/contest/2216",
+      "start_time": "2026-04-12T13:35:00+0800",
+      "end_time": "2026-04-12T16:35:00+0800",
+      "status": "finished",
+      "duration_sec": 10800,
+      "register_url": "https://codeforces.com/contestRegistration/2216",
+      "source": "codeforces-api"
+    },
+    {
+      "platform": "codeforces",
+      "platform_zh": "Codeforces",
+      "name": "Codeforces Round 1093 (Div. 1)",
+      "url": "https://codeforces.com/contest/2219",
+      "start_time": "2026-04-13T22:35:00+0800",
+      "end_time": "2026-04-14T00:35:00+0800",
+      "status": "finished",
+      "duration_sec": 7200,
+      "register_url": "https://codeforces.com/contestRegistration/2219",
+      "source": "codeforces-api"
+    },
+    {
+      "platform": "codeforces",
+      "platform_zh": "Codeforces",
+      "name": "Codeforces Round 1093 (Div. 2)",
+      "url": "https://codeforces.com/contest/2220",
+      "start_time": "2026-04-13T22:35:00+0800",
+      "end_time": "2026-04-14T00:35:00+0800",
+      "status": "finished",
+      "duration_sec": 7200,
+      "register_url": "https://codeforces.com/contestRegistration/2220",
+      "source": "codeforces-api"
+    },
+    {
+      "platform": "cn",
+      "platform_zh": "国内AI赛事",
+      "name": "腾讯云黑客松·AI 智能体争霸赛（CodeBuddy/ClawPro/WorkBuddy）",
+      "url": "https://tch.cloud.tencent.com/contest",
+      "start_time": "2026-04-15T00:00:00+08:00",
+      "end_time": "2026-07-31T23:59:59+08:00",
+      "status": "finished",
+      "duration_sec": null,
+      "register_url": "https://tch.cloud.tencent.com/contest",
+      "note": "双赛道（Skill+Agent）、五大赛区路演；已收官，可查看赛题与获奖作品学习",
+      "source": "manual"
+    },
+    {
+      "platform": "codeforces",
+      "platform_zh": "Codeforces",
+      "name": "Educational Codeforces Round 189 (Rated for Div. 2)",
+      "url": "https://codeforces.com/contest/2225",
+      "start_time": "2026-04-21T22:35:00+0800",
+      "end_time": "2026-04-22T00:35:00+0800",
+      "status": "finished",
+      "duration_sec": 7200,
+      "register_url": "https://codeforces.com/contestRegistration/2225",
+      "source": "codeforces-api"
+    },
+    {
+      "platform": "codeforces",
+      "platform_zh": "Codeforces",
+      "name": "Spectral::Cup 2026 Round 1 (Codeforces Round 1094, Div. 1 + Div. 2)",
+      "url": "https://codeforces.com/contest/2222",
+      "start_time": "2026-04-25T22:35:00+0800",
+      "end_time": "2026-04-26T01:05:00+0800",
+      "status": "finished",
+      "duration_sec": 9000,
+      "register_url": "https://codeforces.com/contestRegistration/2222",
+      "source": "codeforces-api"
+    },
+    {
+      "platform": "cn",
+      "platform_zh": "国内AI赛事",
+      "name": "2026 全球校园人工智能算法精英大赛（aicomp.cn）",
+      "url": "https://www.aicomp.cn/",
+      "start_time": "2026-04-28T00:00:00+08:00",
+      "end_time": "2026-10-10T23:59:59+08:00",
+      "status": "announcement",
+      "duration_sec": null,
+      "register_url": "https://www.aicomp.cn/",
+      "note": "校赛 9 月中旬前完成，省赛/区域赛 10/10 起半决赛，总决赛 11 月中下旬",
+      "source": "manual"
+    },
+    {
+      "platform": "codeforces",
+      "platform_zh": "Codeforces",
+      "name": "Codeforces Round 1095 (Div. 2)",
+      "url": "https://codeforces.com/contest/2226",
+      "start_time": "2026-04-28T22:35:00+0800",
+      "end_time": "2026-04-29T00:50:00+0800",
+      "status": "finished",
+      "duration_sec": 8100,
+      "register_url": "https://codeforces.com/contestRegistration/2226",
+      "source": "codeforces-api"
+    },
+    {
+      "platform": "codeforces",
+      "platform_zh": "Codeforces",
+      "name": "Codeforces Round 1096 (Div. 3)",
+      "url": "https://codeforces.com/contest/2227",
+      "start_time": "2026-04-30T22:35:00+0800",
+      "end_time": "2026-05-01T01:05:00+0800",
+      "status": "finished",
+      "duration_sec": 9000,
+      "register_url": "https://codeforces.com/contestRegistration/2227",
+      "source": "codeforces-api"
+    },
+    {
+      "platform": "codeforces",
+      "platform_zh": "Codeforces",
+      "name": "Codeforces Round 1097 (Div. 1,  Based on Zhili Cup 2026)",
+      "url": "https://codeforces.com/contest/2223",
+      "start_time": "2026-05-06T14:05:00+0800",
+      "end_time": "2026-05-06T16:35:00+0800",
+      "status": "finished",
+      "duration_sec": 9000,
+      "register_url": "https://codeforces.com/contestRegistration/2223",
+      "source": "codeforces-api"
+    },
+    {
+      "platform": "codeforces",
+      "platform_zh": "Codeforces",
+      "name": "Codeforces Round 1097 (Div. 2,  Based on Zhili Cup 2026)",
+      "url": "https://codeforces.com/contest/2224",
+      "start_time": "2026-05-06T14:05:00+0800",
+      "end_time": "2026-05-06T16:35:00+0800",
+      "status": "finished",
+      "duration_sec": 9000,
+      "register_url": "https://codeforces.com/contestRegistration/2224",
+      "source": "codeforces-api"
+    },
+    {
+      "platform": "noi",
+      "platform_zh": "NOI/CSP",
+      "name": "APIO 2026中国区活动荣誉名单公示",
+      "url": "https://www.noi.cnhjmd/mdgs/2026/2026-05-10/890915.shtml",
+      "start_time": "2026-05-10",
+      "end_time": null,
+      "status": "announcement",
+      "duration_sec": null,
+      "register_url": "https://www.noi.cnhjmd/mdgs/2026/2026-05-10/890915.shtml",
+      "source": "noi-cn"
+    },
+    {
+      "platform": "codeforces",
+      "platform_zh": "Codeforces",
+      "name": "Codeforces Round 1098 (Div. 2)",
+      "url": "https://codeforces.com/contest/2228",
+      "start_time": "2026-05-16T22:35:00+0800",
+      "end_time": "2026-05-17T00:50:00+0800",
+      "status": "finished",
+      "duration_sec": 8100,
+      "register_url": "https://codeforces.com/contestRegistration/2228",
+      "source": "codeforces-api"
+    },
+    {
+      "platform": "codeforces",
+      "platform_zh": "Codeforces",
+      "name": "Educational Codeforces Round 190 (Rated for Div. 2)",
+      "url": "https://codeforces.com/contest/2230",
+      "start_time": "2026-05-18T22:35:00+0800",
+      "end_time": "2026-05-19T00:35:00+0800",
+      "status": "finished",
+      "duration_sec": 7200,
+      "register_url": "https://codeforces.com/contestRegistration/2230",
+      "source": "codeforces-api"
+    },
+    {
+      "platform": "codeforces",
+      "platform_zh": "Codeforces",
+      "name": "Codeforces Round 1099 (Div. 2)",
+      "url": "https://codeforces.com/contest/2231",
+      "start_time": "2026-05-21T22:35:00+0800",
+      "end_time": "2026-05-22T00:35:00+0800",
+      "status": "finished",
+      "duration_sec": 7200,
+      "register_url": "https://codeforces.com/contestRegistration/2231",
+      "source": "codeforces-api"
+    },
+    {
+      "platform": "codeforces",
+      "platform_zh": "Codeforces",
+      "name": "Spectral::Cup 2026 Round 2 (Codeforces Round 1100, Div. 1 + Div. 2)",
+      "url": "https://codeforces.com/contest/2229",
+      "start_time": "2026-05-23T22:35:00+0800",
+      "end_time": "2026-05-24T01:35:00+0800",
+      "status": "finished",
+      "duration_sec": 10800,
+      "register_url": "https://codeforces.com/contestRegistration/2229",
+      "source": "codeforces-api"
+    },
+    {
+      "platform": "codeforces",
+      "platform_zh": "Codeforces",
+      "name": "Codeforces Round 1101 (Div. 2)",
+      "url": "https://codeforces.com/contest/2232",
+      "start_time": "2026-05-30T22:35:00+0800",
+      "end_time": "2026-05-31T00:35:00+0800",
+      "status": "finished",
+      "duration_sec": 7200,
+      "register_url": "https://codeforces.com/contestRegistration/2232",
+      "source": "codeforces-api"
+    },
+    {
+      "platform": "cn",
+      "platform_zh": "国内AI赛事",
+      "name": "TRAE AI 创造力大赛（字节跳动，3.7 万人报名）",
+      "url": "https://www.trae.cn/ai-creativity",
+      "start_time": "2026-06-01T00:00:00+08:00",
+      "end_time": "2026-08-21T23:59:59+08:00",
+      "status": "finished",
+      "duration_sec": null,
+      "register_url": "https://www.trae.cn/ai-creativity",
+      "note": "冠军 30 万/亚军 20 万/季军 10 万+赛道大奖；《词元开物》夺冠；1.4 万作品，可看优秀案例",
+      "source": "manual"
+    },
+    {
+      "platform": "codeforces",
+      "platform_zh": "Codeforces",
+      "name": "Codeforces Round 1102 (Div. 2)",
+      "url": "https://codeforces.com/contest/2234",
+      "start_time": "2026-06-07T22:35:00+0800",
+      "end_time": "2026-06-08T00:50:00+0800",
+      "status": "finished",
+      "duration_sec": 8100,
+      "register_url": "https://codeforces.com/contestRegistration/2234",
+      "source": "codeforces-api"
+    },
+    {
+      "platform": "codeforces",
+      "platform_zh": "Codeforces",
+      "name": "Educational Codeforces Round 191 (Rated for Div. 2)",
+      "url": "https://codeforces.com/contest/2233",
+      "start_time": "2026-06-09T22:35:00+0800",
+      "end_time": "2026-06-10T00:35:00+0800",
+      "status": "finished",
+      "duration_sec": 7200,
+      "register_url": "https://codeforces.com/contestRegistration/2233",
+      "source": "codeforces-api"
+    },
+    {
+      "platform": "codeforces",
+      "platform_zh": "Codeforces",
+      "name": "Codeforces Round 1103 (Div. 3)",
+      "url": "https://codeforces.com/contest/2236",
+      "start_time": "2026-06-12T22:35:00+0800",
+      "end_time": "2026-06-13T01:05:00+0800",
+      "status": "finished",
+      "duration_sec": 9000,
+      "register_url": "https://codeforces.com/contestRegistration/2236",
+      "source": "codeforces-api"
+    },
+    {
+      "platform": "codeforces",
+      "platform_zh": "Codeforces",
+      "name": "Order Capital Round 2 (Codeforces Round 1104, Div. 1 + Div. 2)",
+      "url": "https://codeforces.com/contest/2237",
+      "start_time": "2026-06-18T22:35:00+0800",
+      "end_time": "2026-06-19T01:35:00+0800",
+      "status": "finished",
+      "duration_sec": 10800,
+      "register_url": "https://codeforces.com/contestRegistration/2237",
+      "source": "codeforces-api"
+    },
     {
       "platform": "codeforces",
       "platform_zh": "Codeforces",
@@ -49,6 +388,19 @@
       "duration_sec": 8100,
       "register_url": "https://codeforces.com/contestRegistration/2241",
       "source": "codeforces-api"
+    },
+    {
+      "platform": "cn",
+      "platform_zh": "国内AI赛事",
+      "name": "2026 年「人工智能+电竞创新应用大赛」（广西大数据发展局）",
+      "url": "https://difang.gmw.cn/gx/2026-07/03/content_38866594.htm",
+      "start_time": "2026-07-03T00:00:00+08:00",
+      "end_time": "2026-12-31T23:59:59+08:00",
+      "status": "announcement",
+      "duration_sec": null,
+      "register_url": "https://difang.gmw.cn/gx/2026-07/03/content_38866594.htm",
+      "note": "面向全国及东盟国家，AI 与电竞产业融合，以赛聚才",
+      "source": "manual"
     },
     {
       "platform": "noi",
@@ -145,6 +497,19 @@
       "duration_sec": 7200,
       "register_url": "https://codeforces.com/contestRegistration/2247",
       "source": "codeforces-api"
+    },
+    {
+      "platform": "cn",
+      "platform_zh": "国内AI赛事",
+      "name": "外滩大会全民黑客松·AI Coding 大赛（九大 AI Coding 平台首次同台）",
+      "url": "https://watcha.cn/activities/activity-75",
+      "start_time": "2026-07-20T00:00:00+08:00",
+      "end_time": "2026-08-09T23:59:59+08:00",
+      "status": "finished",
+      "duration_sec": null,
+      "register_url": "https://watcha.cn/activities/activity-75",
+      "note": "不限编程方式，任一合作平台完成作品；一等奖 3 名/二等奖 8 名/三等奖 15 名+小红书人气奖 100 名",
+      "source": "manual"
     },
     {
       "platform": "noi",
@@ -279,6 +644,32 @@
       "source": "codeforces-api"
     },
     {
+      "platform": "cn",
+      "platform_zh": "国内AI赛事",
+      "name": "北京大学金融 AI 智能体创新大赛（15 万奖金）",
+      "url": "https://bigquant.com/square/competition/cd12bc1a-71f8-4692-8603-96a9b93cb418",
+      "start_time": "2026-08-10T00:00:00+08:00",
+      "end_time": "2026-09-30T23:59:59+08:00",
+      "status": "announcement",
+      "duration_sec": null,
+      "register_url": "https://bigquant.com/square/competition/cd12bc1a-71f8-4692-8603-96a9b93cb418",
+      "note": "北大金融工程实验室+创业训练营主办；一等奖 5 万，二等奖 2.5 万 x2，三等奖 1 万 x3；免费行业课程+实习内推",
+      "source": "manual"
+    },
+    {
+      "platform": "cn",
+      "platform_zh": "国内AI赛事",
+      "name": "「宝藏母校」Skill 大赛（腾讯 SkillHub × WorkBuddy 联合主办）",
+      "url": "https://skillhub.cn/contest",
+      "start_time": "2026-08-12T00:00:00+08:00",
+      "end_time": "2026-09-18T23:59:59+08:00",
+      "status": "announcement",
+      "duration_sec": null,
+      "register_url": "https://skillhub.cn/contest",
+      "note": "面向全国高校学生/教职工，个人参赛免费，赢取奖励与官方渠道曝光",
+      "source": "manual"
+    },
+    {
       "platform": "codeforces",
       "platform_zh": "Codeforces",
       "name": "ICPC 2026 Online Challenge 1 powered by Huawei",
@@ -327,6 +718,32 @@
       "source": "codeforces-api"
     },
     {
+      "platform": "cn",
+      "platform_zh": "国内AI赛事",
+      "name": "「德邻杯」2026 AI 创业大赛（深圳龙华，冠军 200 万现金）",
+      "url": "https://www.delincapital.com.cn/",
+      "start_time": "2026-08-28T00:00:00+08:00",
+      "end_time": "2026-09-30T23:59:59+08:00",
+      "status": "announcement",
+      "duration_sec": null,
+      "register_url": "https://www.delincapital.com.cn/",
+      "note": "无注册地/专业/规模门槛，需有可演示 MVP，决赛 10/15-16 深圳，入围 15 队可获最高 500 万股权投资",
+      "source": "manual"
+    },
+    {
+      "platform": "cn",
+      "platform_zh": "国内AI赛事",
+      "name": "2026 全国大数据与计算智能挑战赛（大数据与决策国家级重点实验室）",
+      "url": "https://d2.nudt.edu.cn/tzs/",
+      "start_time": "2026-08-28T00:00:00+08:00",
+      "end_time": "2026-11-30T23:59:59+08:00",
+      "status": "announcement",
+      "duration_sec": null,
+      "register_url": "https://d2.nudt.edu.cn/tzs/",
+      "note": "发榜挑战、集智攻关，连续五年组织，聚焦大数据应用难题",
+      "source": "manual"
+    },
+    {
       "platform": "codeforces",
       "platform_zh": "Codeforces",
       "name": "Codeforces Round 1118 (Div. 2)",
@@ -337,6 +754,19 @@
       "duration_sec": 7200,
       "register_url": "https://codeforces.com/contestRegistration/2258",
       "source": "codeforces-api"
+    },
+    {
+      "platform": "cn",
+      "platform_zh": "国内AI赛事",
+      "name": "TRAE「AI 无限职场」SOLO 挑战赛（TRAE × 脉脉）",
+      "url": "https://www.trae.cn/2026-solo-challenge",
+      "start_time": "2026-09-04T00:00:00+08:00",
+      "end_time": "2026-10-31T23:59:59+08:00",
+      "status": "announcement",
+      "duration_sec": null,
+      "register_url": "https://www.trae.cn/2026-solo-challenge",
+      "note": "研发/产品/运营/设计/数据分析多方向，用 SOLO 完成真实任务实践，赢现金大奖+内测权限+训练营",
+      "source": "manual"
     },
     {
       "platform": "codeforces",
@@ -653,6 +1083,18 @@
     {
       "platform": "icpc",
       "platform_zh": "ICPC/ACM",
+      "name": "第51届国际大学生程序设计竞赛亚洲区域赛（成都）邀请函&amp;报名指南",
+      "url": "https://icpc.pku.edu.cn/tzgg/16b0883826d74a238e0ca1423ea52a2e.htm",
+      "start_time": null,
+      "end_time": null,
+      "status": "announcement",
+      "duration_sec": null,
+      "register_url": "https://icpc.pku.edu.cn/tzgg/16b0883826d74a238e0ca1423ea52a2e.htm",
+      "source": "icpc-pku"
+    },
+    {
+      "platform": "icpc",
+      "platform_zh": "ICPC/ACM",
       "name": "2026 ICPC Asia EC网络预选赛排名公示",
       "url": "https://icpc.pku.edu.cn/tzgg/04cbf1167acd456da975482b122ca7b2.htm",
       "start_time": null,
@@ -684,18 +1126,6 @@
       "status": "announcement",
       "duration_sec": null,
       "register_url": "https://icpc.pku.edu.cn/tzgg/35fbb9f94ae841dfbd64bcd332ef4f86.htm",
-      "source": "icpc-pku"
-    },
-    {
-      "platform": "icpc",
-      "platform_zh": "ICPC/ACM",
-      "name": "第51届ICPC国际大学生程序设计竞赛亚洲区域赛（南京）参赛名额分配说明",
-      "url": "https://icpc.pku.edu.cn/tzgg/276a166ac0c34db0af139941fbf2323c.htm",
-      "start_time": null,
-      "end_time": null,
-      "status": "announcement",
-      "duration_sec": null,
-      "register_url": "https://icpc.pku.edu.cn/tzgg/276a166ac0c34db0af139941fbf2323c.htm",
       "source": "icpc-pku"
     },
     {
@@ -840,6 +1270,7 @@
       "status": "announcement",
       "duration_sec": null,
       "register_url": "https://devpost.com/hackathons",
+      "note": "",
       "source": "manual"
     },
     {
@@ -852,6 +1283,7 @@
       "status": "announcement",
       "duration_sec": null,
       "register_url": "https://www.hackathonchina.com/",
+      "note": "",
       "source": "manual"
     },
     {
@@ -864,6 +1296,7 @@
       "status": "announcement",
       "duration_sec": null,
       "register_url": "https://lettuce.cool/",
+      "note": "",
       "source": "manual"
     },
     {
@@ -876,6 +1309,7 @@
       "status": "announcement",
       "duration_sec": null,
       "register_url": "https://techcrunch.com/tag/hackathon/",
+      "note": "",
       "source": "manual"
     }
   ]

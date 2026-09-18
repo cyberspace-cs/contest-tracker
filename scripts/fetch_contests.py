@@ -224,9 +224,10 @@ def fetch_hackathons():
         with open(extra_path, encoding="utf-8") as f:
             extra = json.load(f)
         for e in extra:
+            plat = e.get("platform", "hackathon")
             out.append({
-                "platform": "hackathon",
-                "platform_zh": "黑客松",
+                "platform": plat,
+                "platform_zh": "黑客松" if plat == "hackathon" else "国内AI赛事",
                 "name": e.get("name", ""),
                 "url": e.get("url", ""),
                 "start_time": e.get("start_time"),
@@ -234,6 +235,7 @@ def fetch_hackathons():
                 "status": e.get("status", "announcement"),
                 "duration_sec": None,
                 "register_url": e.get("url", ""),
+                "note": e.get("note", ""),
                 "source": "manual",
             })
     except FileNotFoundError:
@@ -297,10 +299,10 @@ def main():
         seen.add(k)
         dedup.append(c)
 
-    # 窗口过滤：只保留"未来 180 天 + 过去 90 天"内的比赛（覆盖 1/3/6 个月需求）
+    # 窗口过滤：保留"未来 180 天 + 过去 180 天"内的比赛（覆盖 1/3/6 个月筛选需求）
     now = now_ts()
     future_win = now + 180 * 86400
-    past_win = now - 90 * 86400
+    past_win = now - 180 * 86400
     kept = []
     for c in dedup:
         ts = None

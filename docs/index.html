@@ -125,6 +125,7 @@
   .b-icpc { background: rgba(255,169,92,.15); color: var(--orange); }
   .b-noi { background: rgba(255,107,157,.15); color: var(--pink); }
   .b-hackathon { background: rgba(92,208,255,.15); color: var(--cyan); }
+  .b-cn { background: rgba(255,209,102,.15); color: #ffd166; }
   .status {
     font-size: 11px; font-weight: 600; padding: 3px 9px; border-radius: 999px;
   }
@@ -137,6 +138,7 @@
   .card h3 a:hover { color: var(--cyan); }
   .meta { font-size: 12.5px; color: var(--text2); display: flex; flex-wrap: wrap; gap: 6px 16px; }
   .meta b { color: var(--text); font-weight: 600; }
+  .note { font-size: 12px; color: var(--text2); margin-top: 6px; line-height: 1.6; }
   .time-left { font-size: 12px; margin-top: 8px; font-weight: 600; }
   .tl-upcoming { color: var(--cyan); }
   .tl-running { color: var(--green); }
@@ -216,6 +218,7 @@ const PLATFORM_META = {
   icpc:       { zh: "ICPC/ACM",   color: "#ffa95c", cls: "b-icpc" },
   noi:        { zh: "NOI/CSP",    color: "#ff6b9d", cls: "b-noi" },
   hackathon:  { zh: "黑客松",      color: "#5cd0ff", cls: "b-hackathon" },
+  cn:         { zh: "国内AI赛事",  color: "#ffd166", cls: "b-cn" },
 };
 const STATUS_ZH = {
   upcoming: "即将开始", running: "进行中", finished: "已结束", announcement: "公告/报名", unknown: "未知",
@@ -339,6 +342,7 @@ function render() {
     }
     const tlt = timeLeftText(c);
     const timeLeft = tlt ? `<div class="time-left tl-${c.status}">${tlt}</div>` : "";
+    const note = c.note ? `<div class="note">📌 ${c.note}</div>` : "";
 
     let links = "";
     if (c.url) links += `<a href="${c.url}" target="_blank" rel="noopener">🔗 比赛主页</a>`;
@@ -353,6 +357,7 @@ function render() {
           </div>
           <h3><a href="${c.url || '#'}" target="_blank" rel="noopener">${c.name}</a></h3>
           <div class="meta">${timeMeta}</div>
+          ${note}
           ${timeLeft}
           ${links ? `<div class="links">${links}</div>` : ""}
         </div>
