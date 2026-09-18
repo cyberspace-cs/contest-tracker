@@ -25,6 +25,7 @@
 | ICPC / ACM | `icpc.pku.edu.cn` 公告页 | 无 |
 | NOI / CSP | `noi.cn` 首页新闻 | 无 |
 | 黑客松 | `hackathon.com` + 手动维护 `extra_hackathons.json` | 无 |
+| **国内AI赛事** | 手动维护 `extra_hackathons.json`（腾讯 WorkBuddy / TRAE / 德邻杯 / 北大 / 小红书 / 华为等） | 无 |
 
 ## 🚀 快速开始
 
