@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-18T16:20:21+0800",
-  "total": 108,
+  "generated_at": "2026-09-18T17:17:50+0800",
+  "total": 111,
   "contests": [
     {
       "platform": "codeforces",
@@ -558,6 +558,45 @@
       "duration_sec": null,
       "register_url": "https://www.noi.cnxw/2026-07-27/918275.shtml",
       "source": "noi-cn"
+    },
+    {
+      "platform": "cn",
+      "platform_zh": "国内AI赛事",
+      "name": "欧莱雅第二届美妆科技黑客松·赛题1「数据共情者 - 消费者的AI管家」（天池）",
+      "url": "https://tianchi.aliyun.com/competition/entrance/532503",
+      "start_time": "2026-08-01T00:00:00+08:00",
+      "end_time": "2026-10-20T23:59:59+08:00",
+      "status": "announcement",
+      "duration_sec": null,
+      "register_url": "https://tianchi.aliyun.com/competition/entrance/532503",
+      "note": "总奖金 20 万，473 支团队参赛中；多模态 + 智能体标签，AI 管家方向",
+      "source": "manual"
+    },
+    {
+      "platform": "cn",
+      "platform_zh": "国内AI赛事",
+      "name": "欧莱雅第二届美妆科技黑客松·赛题2「信任守护师 - 创造者的AI卫士」（天池）",
+      "url": "https://tianchi.aliyun.com/competition/entrance/532496",
+      "start_time": "2026-08-01T00:00:00+08:00",
+      "end_time": "2026-10-20T23:59:59+08:00",
+      "status": "announcement",
+      "duration_sec": null,
+      "register_url": "https://tianchi.aliyun.com/competition/entrance/532496",
+      "note": "总奖金 20 万，245 支团队参赛中；多模态 + 智能体标签，内容鉴查/信任守护方向",
+      "source": "manual"
+    },
+    {
+      "platform": "cn",
+      "platform_zh": "国内AI赛事",
+      "name": "欧莱雅第二届美妆科技黑客松·赛题3「无界体验家 - 用爱(AI)让美触手可及」（天池）",
+      "url": "https://tianchi.aliyun.com/competition/entrance/532497",
+      "start_time": "2026-08-01T00:00:00+08:00",
+      "end_time": "2026-10-20T23:59:59+08:00",
+      "status": "announcement",
+      "duration_sec": null,
+      "register_url": "https://tianchi.aliyun.com/competition/entrance/532497",
+      "note": "总奖金 20 万，报名进行中；多模态 + 智能体标签，美妆体验方向",
+      "source": "manual"
     },
     {
       "platform": "codeforces",
