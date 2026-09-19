@@ -92,6 +92,20 @@
   .pill[data-p="noi"].on { background: #3b0764; }
   .pill[data-p="hackathon"].on { background: #164e63; }
 
+  /* Status pills */
+  .spill { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; margin: 0 auto 18px; max-width: 900px; }
+  .spill .pill { font-size: 12px; padding: 4px 12px; border-radius: 20px; }
+  .spill .pill.on { opacity: 1; }
+  .spill .pill.off { opacity: .4; }
+
+  /* Sort bar */
+  .sortbar { display: flex; justify-content: flex-end; margin: 0 auto 14px; max-width: 900px; }
+  .sortbar select {
+    background: var(--card2); color: var(--text); border: 1px solid rgba(255,255,255,.1);
+    border-radius: 8px; padding: 5px 12px; font-size: 13px; cursor: pointer; outline: none;
+  }
+  .sortbar select:hover { border-color: var(--accent); }
+
   /* Timeline */
   .timeline { position: relative; padding-left: 28px; }
   .timeline::before {
@@ -194,11 +208,13 @@
   </div>
 
   <div class="pills" id="pills"></div>
-  <div class="legend">
-    <span><i style="background:var(--accent)"></i> 即将开始</span>
-    <span><i style="background:var(--green)"></i> 进行中</span>
-    <span><i style="background:var(--orange)"></i> 公告/报名</span>
-    <span><i style="background:var(--gray)"></i> 已结束</span>
+  <div class="spill" id="statusPills"></div>
+  <div class="sortbar">
+    <select id="sortBy">
+      <option value="deadline">按截止时间（紧急优先）</option>
+      <option value="start">按开始时间</option>
+      <option value="name">按名称</option>
+    </select>
   </div>
 
   <div id="timeline" class="timeline">
@@ -225,7 +241,9 @@ const STATUS_ZH = {
 };
 let DATA = null;
 let rangeMonths = 3;
+let sortBy = "deadline";
 const activePlats = new Set(Object.keys(PLATFORM_META));
+const activeStatuses = new Set(["upcoming", "running", "announcement"]);
 
 function fmt(dt) {
   if (!dt) return "时间待定";
@@ -270,6 +288,7 @@ function loadData() {
       document.getElementById("genInfo").textContent =
         `共 ${d.total} 场比赛 · 更新于 ${fmt(d.generated_at)}`;
       renderPills();
+      renderStatusPills();
       render();
     })
     .catch(e => {
@@ -296,6 +315,28 @@ function renderPills() {
   }
 }
 
+function renderStatusPills() {
+  const wrap = document.getElementById("statusPills");
+  wrap.innerHTML = "";
+  const defs = [
+    { k: "upcoming", zh: "即将开始", color: "var(--accent)" },
+    { k: "running", zh: "进行中", color: "var(--green)" },
+    { k: "announcement", zh: "公告/报名", color: "var(--orange)" },
+    { k: "finished", zh: "已结束", color: "var(--gray)" },
+  ];
+  for (const s of defs) {
+    const btn = document.createElement("div");
+    btn.className = "pill " + (activeStatuses.has(s.k) ? "on" : "off");
+    btn.innerHTML = `<span class="dot" style="background:${s.color}"></span>${s.zh}`;
+    btn.onclick = () => {
+      if (activeStatuses.has(s.k)) { activeStatuses.delete(s.k); btn.classList.remove("on"); btn.classList.add("off"); }
+      else { activeStatuses.add(s.k); btn.classList.add("on"); btn.classList.remove("off"); }
+      render();
+    };
+    wrap.appendChild(btn);
+  }
+}
+
 function filterContests() {
   const q = document.getElementById("search").value.trim().toLowerCase();
   const cutoff = new Date();
@@ -305,14 +346,33 @@ function filterContests() {
 
   return DATA.contests.filter(c => {
     if (!activePlats.has(c.platform)) return false;
-    if (q && !c.name.toLowerCase().includes(q)) return false;
-    const t = c.start_time ? new Date(c.start_time).getTime() : null;
-    if (t && !isNaN(t)) return t >= cutoffTs;
-    // 无时间的公告类：仅在"近 6 个月"且搜索命中时显示，避免刷屏
-    return rangeMonths >= 6 && !q;
+    if (!activeStatuses.has(c.status)) return false;
+    // 搜索同时匹配名称和备注
+    if (q) {
+      const hay = (c.name + " " + (c.note || "")).toLowerCase();
+      if (!hay.includes(q)) return false;
+    }
+    // 时间窗口：结束时间在 cutoff 之后，或开始时间在 now 之后（即将开始的也算）
+    const st = c.start_time ? new Date(c.start_time).getTime() : null;
+    const et = c.end_time ? new Date(c.end_time).getTime() : null;
+    const ref = (et && !isNaN(et)) ? et : (st && !isNaN(st) ? st : null);
+    if (ref && !isNaN(ref)) {
+      if (ref < cutoffTs && c.status !== "upcoming") return false;
+    } else {
+      // 无明确结束时间的公告类
+      if (c.status !== "announcement") return false;
+    }
+    return true;
   }).sort((a, b) => {
-    const ta = a.start_time ? new Date(a.start_time).getTime() : (nowTs + 9e9);
-    const tb = b.start_time ? new Date(b.start_time).getTime() : (nowTs + 9e9);
+    if (sortBy === "name") return a.name.localeCompare(b.name, "zh");
+    if (sortBy === "start") {
+      const ta = a.start_time ? new Date(a.start_time).getTime() : nowTs + 9e9;
+      const tb = b.start_time ? new Date(b.start_time).getTime() : nowTs + 9e9;
+      return ta - tb;
+    }
+    // 默认：按截止时间（结束时间升序，紧急在前；无结束时间的排最后）
+    const ta = a.end_time ? new Date(a.end_time).getTime() : (nowTs + 9e9);
+    const tb = b.end_time ? new Date(b.end_time).getTime() : (nowTs + 9e9);
     return ta - tb;
   });
 }
@@ -375,6 +435,7 @@ document.getElementById("rangeSeg").addEventListener("click", e => {
   render();
 });
 document.getElementById("search").addEventListener("input", render);
+document.getElementById("sortBy").addEventListener("change", e => { sortBy = e.target.value; render(); });
 
 loadData();
 </script>

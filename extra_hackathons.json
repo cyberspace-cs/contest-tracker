@@ -1,5 +1,50 @@
 [
   {
+    "name": "Anker 首届黑客松挑战赛（深圳）",
+    "url": "https://www.anker.com/",
+    "start_time": "2026-09-07T00:00:00+08:00",
+    "end_time": "2026-10-17T23:59:59+08:00",
+    "status": "running",
+    "platform": "cn",
+    "note": "线下决赛 10.16-10.17 深圳 BREWTOWN 雪花啤酒小镇，智能硬件+AI 方向"
+  },
+  {
+    "name": "TRIPOTHON S1（Tripo AI 全球 3D AI 黑客松）",
+    "url": "https://www.tripo3d.ai/",
+    "start_time": "2026-09-01T00:00:00+08:00",
+    "end_time": "2026-10-31T23:59:59+08:00",
+    "status": "running",
+    "platform": "cn",
+    "note": "5 大赛道，$80,000+ 现金奖，7 城线下 demo day（巴黎/东京/首尔/上海/旧金山/巴塞罗那/圣保罗），3D 世界构建方向"
+  },
+  {
+    "name": "「当 AI 逃出沙箱」AI 安全红队黑客松",
+    "url": "https://www.aicamp.cn/",
+    "start_time": "2026-09-15T00:00:00+08:00",
+    "end_time": "2026-10-31T23:59:59+08:00",
+    "status": "announcement",
+    "platform": "cn",
+    "note": "AI 安全/红队对抗方向，探索大模型沙箱逃逸与防御"
+  },
+  {
+    "name": "全球 AI 艺术黑客松",
+    "url": "https://www.aicamp.cn/",
+    "start_time": "2026-09-15T00:00:00+08:00",
+    "end_time": "2026-10-31T23:59:59+08:00",
+    "status": "announcement",
+    "platform": "cn",
+    "note": "AI 生成艺术/创意方向，面向艺术家与开发者"
+  },
+  {
+    "name": "海派初芯 × Next iBot 上海创意黑客松（FC-OPC）",
+    "url": "https://www.opencsg.com/",
+    "start_time": "2026-09-12T00:00:00+08:00",
+    "end_time": "2026-09-30T23:59:59+08:00",
+    "status": "running",
+    "platform": "cn",
+    "note": "一日造梦·代码成诗，AI Agent 智能体方向，OpenCSG 生态合作"
+  },
+  {
     "name": "欧莱雅第二届美妆科技黑客松·赛题1「数据共情者 - 消费者的AI管家」（天池）",
     "url": "https://tianchi.aliyun.com/competition/entrance/532503",
     "start_time": "2026-08-01T00:00:00+08:00",

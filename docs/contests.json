@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-18T17:17:50+0800",
-  "total": 111,
+  "generated_at": "2026-09-19T10:25:30+0800",
+  "total": 116,
   "contests": [
     {
       "platform": "codeforces",
@@ -797,6 +797,19 @@
     {
       "platform": "cn",
       "platform_zh": "国内AI赛事",
+      "name": "TRIPOTHON S1（Tripo AI 全球 3D AI 黑客松）",
+      "url": "https://www.tripo3d.ai/",
+      "start_time": "2026-09-01T00:00:00+08:00",
+      "end_time": "2026-10-31T23:59:59+08:00",
+      "status": "running",
+      "duration_sec": null,
+      "register_url": "https://www.tripo3d.ai/",
+      "note": "5 大赛道，$80,000+ 现金奖，7 城线下 demo day（巴黎/东京/首尔/上海/旧金山/巴塞罗那/圣保罗），3D 世界构建方向",
+      "source": "manual"
+    },
+    {
+      "platform": "cn",
+      "platform_zh": "国内AI赛事",
       "name": "TRAE「AI 无限职场」SOLO 挑战赛（TRAE × 脉脉）",
       "url": "https://www.trae.cn/2026-solo-challenge",
       "start_time": "2026-09-04T00:00:00+08:00",
@@ -818,6 +831,19 @@
       "duration_sec": 8100,
       "register_url": "https://codeforces.com/contestRegistration/2259",
       "source": "codeforces-api"
+    },
+    {
+      "platform": "cn",
+      "platform_zh": "国内AI赛事",
+      "name": "Anker 首届黑客松挑战赛（深圳）",
+      "url": "https://www.anker.com/",
+      "start_time": "2026-09-07T00:00:00+08:00",
+      "end_time": "2026-10-17T23:59:59+08:00",
+      "status": "running",
+      "duration_sec": null,
+      "register_url": "https://www.anker.com/",
+      "note": "线下决赛 10.16-10.17 深圳 BREWTOWN 雪花啤酒小镇，智能硬件+AI 方向",
+      "source": "manual"
     },
     {
       "platform": "codeforces",
@@ -868,6 +894,19 @@
       "source": "noi-cn"
     },
     {
+      "platform": "cn",
+      "platform_zh": "国内AI赛事",
+      "name": "海派初芯 × Next iBot 上海创意黑客松（FC-OPC）",
+      "url": "https://www.opencsg.com/",
+      "start_time": "2026-09-12T00:00:00+08:00",
+      "end_time": "2026-09-30T23:59:59+08:00",
+      "status": "running",
+      "duration_sec": null,
+      "register_url": "https://www.opencsg.com/",
+      "note": "一日造梦·代码成诗，AI Agent 智能体方向，OpenCSG 生态合作",
+      "source": "manual"
+    },
+    {
       "platform": "codeforces",
       "platform_zh": "Codeforces",
       "name": "Codeforces Round 1120 (Div. 1)",
@@ -904,16 +943,30 @@
       "source": "codeforces-api"
     },
     {
-      "platform": "noi",
-      "platform_zh": "NOI/CSP",
-      "name": "2026年CSP-J/S第一轮认证河北省认证点安排",
-      "url": "https://www.noi.cngs/xw/hb/2026-09-15/932399.shtml",
-      "start_time": "2026-09-15",
-      "end_time": null,
+      "platform": "cn",
+      "platform_zh": "国内AI赛事",
+      "name": "「当 AI 逃出沙箱」AI 安全红队黑客松",
+      "url": "https://www.aicamp.cn/",
+      "start_time": "2026-09-15T00:00:00+08:00",
+      "end_time": "2026-10-31T23:59:59+08:00",
       "status": "announcement",
       "duration_sec": null,
-      "register_url": "https://www.noi.cngs/xw/hb/2026-09-15/932399.shtml",
-      "source": "noi-cn"
+      "register_url": "https://www.aicamp.cn/",
+      "note": "AI 安全/红队对抗方向，探索大模型沙箱逃逸与防御",
+      "source": "manual"
+    },
+    {
+      "platform": "cn",
+      "platform_zh": "国内AI赛事",
+      "name": "全球 AI 艺术黑客松",
+      "url": "https://www.aicamp.cn/",
+      "start_time": "2026-09-15T00:00:00+08:00",
+      "end_time": "2026-10-31T23:59:59+08:00",
+      "status": "announcement",
+      "duration_sec": null,
+      "register_url": "https://www.aicamp.cn/",
+      "note": "AI 生成艺术/创意方向，面向艺术家与开发者",
+      "source": "manual"
     },
     {
       "platform": "noi",
@@ -930,25 +983,13 @@
     {
       "platform": "noi",
       "platform_zh": "NOI/CSP",
-      "name": "2026年福建地区CSP-J/S2026第一轮认证考生须知及注意事项",
-      "url": "https://www.noi.cngs/xw/fj/2026-09-16/932636.shtml",
-      "start_time": "2026-09-16",
+      "name": "湖北省CSP-J/S认证信息更正通知",
+      "url": "https://www.noi.cngs/xw/hb1/2026-09-18/933320.shtml",
+      "start_time": "2026-09-18",
       "end_time": null,
       "status": "announcement",
       "duration_sec": null,
-      "register_url": "https://www.noi.cngs/xw/fj/2026-09-16/932636.shtml",
-      "source": "noi-cn"
-    },
-    {
-      "platform": "noi",
-      "platform_zh": "NOI/CSP",
-      "name": "CSP-J/S 2026第一轮认证浙江省认证考试的安排",
-      "url": "https://www.noi.cngs/xw/zj/2026-09-16/932625.shtml",
-      "start_time": "2026-09-16",
-      "end_time": null,
-      "status": "announcement",
-      "duration_sec": null,
-      "register_url": "https://www.noi.cngs/xw/zj/2026-09-16/932625.shtml",
+      "register_url": "https://www.noi.cngs/xw/hb1/2026-09-18/933320.shtml",
       "source": "noi-cn"
     },
     {
@@ -973,6 +1014,30 @@
       "status": "announcement",
       "duration_sec": null,
       "register_url": "https://www.noi.cngs/xw/hb/2026-09-18/933231.shtml",
+      "source": "noi-cn"
+    },
+    {
+      "platform": "noi",
+      "platform_zh": "NOI/CSP",
+      "name": "关于CSP-J/S 2026（第二轮）广东省晋级规则与测算办法的通知",
+      "url": "https://www.noi.cngs/xw/gd/2026-09-19/933453.shtml",
+      "start_time": "2026-09-19",
+      "end_time": null,
+      "status": "announcement",
+      "duration_sec": null,
+      "register_url": "https://www.noi.cngs/xw/gd/2026-09-19/933453.shtml",
+      "source": "noi-cn"
+    },
+    {
+      "platform": "noi",
+      "platform_zh": "NOI/CSP",
+      "name": "CSP-J/S 2026（第一轮）广东地区选手信息更正",
+      "url": "https://www.noi.cngs/xw/gd/2026-09-19/933442.shtml",
+      "start_time": "2026-09-19",
+      "end_time": null,
+      "status": "announcement",
+      "duration_sec": null,
+      "register_url": "https://www.noi.cngs/xw/gd/2026-09-19/933442.shtml",
       "source": "noi-cn"
     },
     {
